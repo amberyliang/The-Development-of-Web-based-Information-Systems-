@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% block body %}
+<main id="main">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>個人資料</h2>
+          <ol>
+            <li><a href="/index">Home</a></li>
+            <!-- <li>掛號單</li> -->
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs Section -->
+<!-- ======= Registrtion table ======= -->
+
+<div class="container">
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th colspan="6">個人資料</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>姓名</td>
+                <td>email</td>
+                <td>身份證號</td>
+                <td>生日</td>
+                <td>手機號碼</td>
+                
+            </tr>
+           
+
+            <td>{{ profiles.name }}</td>
+            <td>{{ profiles.email }}</td>
+            <td>{{ profiles.id_number }}</td>
+            <td>{{ profiles.birthday }}</td>
+            <td>{{ profiles.phone_number }}</td>
+          
+            
+        </tbody>
+    </table>
+</div>
+
+
+<style type="text/css">
+.container {
+    width: 80%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.styled-table th,
+.styled-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.styled-table thead {
+    background-color: #f2f2f2;
+}
+
+.styled-table th {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.styled-table td {
+    font-size: 14px;
+}
+
+.styled-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f1f1f1;
+}</style>
+
+                        
+        
+    </table>
+</div>
+
+
+<!-- ======= End Registrtion table ======= -->
+
+</main>
+{% endblock %}

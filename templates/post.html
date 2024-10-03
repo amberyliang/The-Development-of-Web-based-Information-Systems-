@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% block body %}
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2></h2>
+          <ol>
+            <li><a href="/index">Home</a></li>
+            <li>聯絡我們</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>聯絡我們</h2>
+          <p>中興醫院熱忱歡迎病患及其家屬致電詢問醫療知識和預約看診。我們的專業團隊將竭誠為您提供準確且及時的解答。不論您有關疾病症狀、醫療程序、藥物使用或預約安排的問題，我們都會耐心聆聽並提供專業的指導。我們重視每位病患的需求，並致力於提供高品質的醫療服務。請隨時撥打中興醫院的電話，我們期待能為您提供最佳的醫療照護。</p>
+        </div>
+
+      </div>
+
+      <div>
+        <!-- <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe> -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14565.490127482779!2d120.675326!3d24.123552!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693cfcecffe9d9%3A0xe28afadc0dad203a!2z5ZyL56uL5Lit6IiI5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1686372632384!5m2!1szh-TW!2stw" width="1850" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="container">
+
+        <div class="row mt-5">
+
+          <div class="col-lg-6">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="info-box">
+                  <i class="bx bx-map"></i>
+                  <h3>我們的位址</h3>
+                  <p>台中市南區興大路145號</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box mt-4">
+                  <i class="bx bx-envelope"></i>
+                  <h3>寫信給我們</h3>
+                  <p>chhospital@example.com<br>chunghsinghos@example.com</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box mt-4">
+                  <i class="bx bx-phone-call"></i>
+                  <h3>聯絡我們</h3>
+                  <p>（04）22873181<br>(04) 22873182</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+            {% if message %}
+            <div class="alert alert-warning">{{ message }}</div>
+            {% endif %}
+            <form name = "email_receive" action="/post" method="POST" role="form">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="您的姓名" required="">
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="您的Email" required="">
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="主旨" required="">
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="7" placeholder="訊息" required=""></textarea>
+              </div>
+            }
+<!--               <div class="my-3">
+                <div class="loading">Loading</div>
+
+              </div> -->
+              <div class="text-center"><button type="submit">寄出</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+
+
+
+
+  </main><!-- End #main -->
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block body %}
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>醫師群介紹</h2>
+          <ol>
+            <li><a href="/index">Home</a></li>
+            <li>醫師群介紹</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs Section -->
+
+<!-- ======= Appointment Section ======= -->
+
+      <div class="container" data-aos="fade-up" >
+
+        <div class="section-title" >
+          <h2>進行線上掛號預約</h2>
+          <p>現在您可以透過中興醫院的線上掛號系統方便快捷地預約看診。只需訪問我們的官方網站，填寫必要資訊並選擇您希望的門診科別和醫生，即可預約您的就診時間。這讓您避免了長時間等待和現場排隊的困擾，節省您寶貴的時間。我們致力於提供方便、高效的醫療服務，讓您的就診體驗更加順利和舒適。</p>
+        </div>
+        {% if message %}
+            <div class="alert alert-warning">{{ message }}</div>
+        {% endif %}
+        <div class="col-lg-6">
+            <form action="/registration" method="POST" role="form">
+              {% csrf_token %}
+              <div class="row" >
+                <table>
+                  {{ form.as_table }}
+                  
+                  <tr><td>
+                    <label for='date'><strong>預約日期：</strong></label>
+                    <input type="date" name="date" id="date">
+                  </td></tr>
+                  <td><select name="department" id="department" class="form-select">
+                    <option value="">請選擇科別</option>
+                    <option value="小兒科">小兒科</option>
+                    <option value="婦產科">婦產科</option>
+                    <option value="外科">外科</option>
+                    <option value="內科">內科</option>
+                  </select></td>
+                </table>
+              </div>
+              <div class="text-center"><button type="submit" id='btn'>預約</button></div>
+            </form>
+          </div>
+
+
+      </div>
+<!-- End Appointment Section -->
+
+
+
+
+
+  </main><!-- End #main -->
+
+
+{% endblock %}

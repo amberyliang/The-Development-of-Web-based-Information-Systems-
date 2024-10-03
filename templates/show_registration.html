@@ -1,0 +1,171 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+
+
+<main id="main">
+
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>掛號單</h2>
+          <ol>
+            <li><a href="/index">Home</a></li>
+            <li>掛號單</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs Section -->
+<!-- ======= Registrtion table ======= -->
+
+<div class="container">
+    {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th colspan="7">掛號狀況</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <th>姓名</th>
+                <th>身份證號</th>
+                <th>生日</th>
+                <th>科別</th>
+                
+                <th>手機號碼</th>
+                <th>日期</th>
+                <th>刪除掛號</th>
+            </tr>
+            {% for registration in registrations %}
+            <tr>
+                <td>{{ registration.name }}</td>
+                <td>{{ registration.id_number }}</td>
+                <td>{{ registration.birthday }}</td>
+                <td>{{ registration.department }}</td>
+                
+                <td>{{ registration.phone_number }}</td>
+                <td>{{ registration.date }}</td>
+                <td><span class="glyphicon glyphicon-trash" onclick="go_delete('{{ registration.id }}')"></span></td>
+            </tr>
+            {% endfor %}
+        
+    </tbody>
+    </table>
+</div>
+
+<!-- 引入 jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除注册信息</title>
+    <script>
+        function go_delete(id) {
+            // 发送删除请求前确认
+            if (confirm('确定要删除吗？')) {
+                // 获取当前用户的 superior 值，通过模板传递到 JavaScript 中
+                var superior = '{{ request.user.superior|yesno:"true,false" }}';  // 假设可以直接在模板中获取到 user 对象和 superior 属性
+
+                // 构建删除请求的 URL
+                var url = `/registration/registered/delete/${id}/${superior}/`;
+
+                // 发送 DELETE 请求
+                fetch(url, {
+                    method: 'DELETE',
+                    headers: {
+                        'X-CSRFToken': '{{ csrf_token }}',
+                        'Content-Type': 'application/json'
+                    },
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // 删除成功，显示成功消息并刷新页面
+                        alert('成功删除注册信息');
+                        location.reload();  // 刷新页面或其他操作
+                    } else {
+                        // 处理删除失败情况
+                        response.json().then(data => {
+                            alert(data.error || '删除失败');
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('网络错误:', error);
+                    alert('网络错误，请重试');
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- 假设你的页面上有一个按钮调用 go_delete 函数 -->
+    <button onclick="go_delete(1)">删除注册信息</button>
+</body>
+</html>
+
+
+
+
+<style type="text/css">
+.container {
+    width: 80%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.styled-table th,
+.styled-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.styled-table thead {
+    background-color: #f2f2f2;
+}
+
+.styled-table th {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.styled-table td {
+    font-size: 14px;
+}
+
+.styled-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f1f1f1;
+}</style>
+
+                        
+        
+    </table>
+</div>
+
+
+<!-- ======= End Registrtion table ======= -->
+
+</main>
+{% endblock %}

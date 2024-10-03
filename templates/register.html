@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block body %}
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<body>
+  <main id="main">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>註冊</h2>
+          <ol>
+            <li><a href="/index">Home</a></li>
+            <li>註冊</li>
+          </ol>
+        </div>
+      </div>
+</section><!-- End Breadcrumbs Section -->
+  <form action="/register" method="post" role="form" data-aos="fade-up" data-aos-delay="100">
+    {% csrf_token %}      
+    <table align="center">{{ register_form.as_table }}</table>
+
+      <div class="text-center"><button type="submit" id="btn">註冊</button></div>
+  </form>
+
+
+
+
+
+
+  </main><!-- End #main -->
+</body>
+</section>
+{% endblock %}

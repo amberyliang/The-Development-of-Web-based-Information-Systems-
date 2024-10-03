@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block body %}
+<body>
+  <main id="main">
+
+    ## ======= Breadcrumbs Section ======= 
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>醫生登入系統</h2>
+          <ol>
+            <li><a href="/index">Home</a></li>
+            <li>醫生登入系統</li>
+          </ol>
+        </div>
+
+      </div>
+    </section> 
+    
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+            <form action="/login" method="POST" role="form">
+              {% csrf_token %}
+               <div class="row">
+                <div class="col-md-12">
+                  <table class="table">
+                  {{ login_form.as_table }}
+                   </table>
+                <!-- <div class="col-md-6 form-group">
+                  <input type="text" name="username" class="form-control" id="username" placeholder="您的姓名" required="">
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="password" class="form-control" name="password" id="password" placeholder="您的密碼" required="">
+                </div> -->
+              </div>
+
+              <div class="text-center"><button type="submit" id='btn'>登入</button></div>
+            </form>
+          </div>
+          
+        </div>
+
+      </div>
+    </section>
+
+
+<section id="contact" class="contact">
+      <div class="container">
+
+        <div class="row mt-5">
+
+          <div class="col-lg-6">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="info-box">
+                  <i class="bx bx-map"></i>
+                  <h3>我們的位址</h3>
+                  <p>台中市南區興大路145號</p>
+                </div>
+              </div>
+              
+              <div class="col-md-6">
+                <div class="info-box mt-4">
+                  <i class="bx bx-envelope"></i>
+                  <h3>寫信給我們</h3>
+                  <p>chhospital@example.com<br>chunghsinghos@example.com</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box mt-4">
+                  <i class="bx bx-phone-call"></i>
+                  <h3>聯絡我們</h3>
+                  <p>（04）22873181<br>(04) 22873182</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- End Contact Section -->
+
+
+
+
+
+
+
+
+  </main><!-- End #main -->
+</body>
+{% endblock %}

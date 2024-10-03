@@ -1,0 +1,417 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+<body>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+      <div class="carousel-inner" role="listbox">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg)">
+          <div class="container">
+            <h2>歡迎來到<span>中興醫院網站</span></h2>
+            <p>歡迎來到中興醫院網站！我們致力於為您提供全面的醫療資訊和便捷的服務。請隨時瀏覽我們的網站，了解最新的醫療科技、專業團隊和預約看診等相關資訊。感謝您的光臨，中興醫院將竭誠為您服務。</p>
+            <a href="#about" class="btn-get-started scrollto">了解更多</a>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item" style="background-image: url(assets/img/slide/slide-2.jpg)">
+          <div class="container">
+            <h2>歡迎來到<span>中興醫院網站</span></h2>
+            <p>歡迎來到中興醫院網站！我們致力於為您提供全面的醫療資訊和便捷的服務。請隨時瀏覽我們的網站，了解最新的醫療科技、專業團隊和預約看診等相關資訊。感謝您的光臨，中興醫院將竭誠為您服務。</p>
+            <a href="#about" class="btn-get-started scrollto">了解更多</a>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg)">
+          <div class="container">
+            <h2>歡迎來到<span>中興醫院網站</span></h2>
+            <p>歡迎來到中興醫院網站！我們致力於為您提供全面的醫療資訊和便捷的服務。請隨時瀏覽我們的網站，了解最新的醫療科技、專業團隊和預約看診等相關資訊。感謝您的光臨，中興醫院將竭誠為您服務。</p>
+            <a href="#about" class="btn-get-started scrollto">了解更多</a>
+          </div>
+        </div>
+
+      </div>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+      </a>
+
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+      </a>
+
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Featured Services Section ======= -->
+    <section id="featured-services" class="featured-services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="fas fa-heartbeat"></i></div>
+              <h4 class="title">植入式心律去顫器</h4>
+              <p class="description">中興醫院作為一家先進的醫療中心，擁有經驗豐富的心臟科專家和現代化的設施，能夠為患者提供植入式心臟去顫器的植入手術和相關的後續護理</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon"><i class="fas fa-pills"></i></div>
+              <h4 class="title">最新的藥品</h4>
+              <p class="description">中興醫院致力於提供最新的藥物治療方案，以改善患者的健康狀況和生活質量。我们不斷更新和引進最先進的藥物，以應對各種疾病和病症</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon"><i class="fas fa-thermometer"></i></div>
+              <h4 class="title">全方位的疫苗</h4>
+              <p class="description">中興醫院為患者提供齊全的疫苗接種服務，我們致力於保護您和您的家人免受各種疾病的威脅。我們提供最新的疫苗，包括預防傳染病和成人疫苗，以確保您的免疫系統強壯並有效對抗疾病</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+              <div class="icon"><i class="fas fa-dna"></i></div>
+              <h4 class="title">基因健康篩檢</h4>
+              <p class="description">中興醫院提供全面的基因健康篩檢服務，通過分析您的基因組，我們能夠提供個人化的醫學建議，早期發現潛在疾病風險並制定預防措施，以促進您的健康和福祉。我們的篩檢範圍包括遺傳疾病、癌症風險評估、藥物反應預測等，致力於為您提供精確、可靠的基因健康信息，讓您更好地管理自己的健康。</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Featured Services Section -->
+
+ 
+  
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>關於我們</h2>
+          <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-right">
+            <img src="assets/img/about.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
+            <h3>我們重視患者的意見和需求，致力於提供個性化的醫療照護。無論是住院還是門診，我們都會以患者為中心，提供專業的醫療服務和溫暖的人文關懷</h3>
+            <p class="fst-italic">
+              中興醫院是一家引領醫療技術與服務的頂尖醫療中心。我們致力於提供最優質的醫療保健，以及廣泛的診療服務，以滿足患者的需求。在中興醫院，我們擁有一支卓越的醫療團隊，結合專業知識和同理心，致力於為患者提供最好的護理。
+            </p>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> 先進的手術室和高精度的影像設備，如MRI和CT掃描儀</li>
+              <li><i class="bi bi-check-circle"></i> 24小時開放的急診部門，可以隨時應對緊急情況。此外，我們醫院內設有藥房、檢驗室和康復中心</li>
+              <li><i class="bi bi-check-circle"></i> 醫療團隊由優秀的專家組成，他們擁有豐富的臨床經驗和專業知識。無論是在內科、外科、婦產科還是小兒科，我們的醫生都在各自的專業領域中享有盛譽</li>
+            </ul>
+            <p>
+              中興醫院是您和您家人信賴的醫療伙伴，我們致力於為每位患者提供最好的醫療護理。無論您需要哪方面的醫療服務，中興醫院都將是您的首選，讓我們一同守護您的健康。
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row no-gutters">
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="fas fa-user-md"></i>
+              <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1" class="purecounter"></span>
+
+              <p><strong>專業醫師</strong> 專業醫師群全天候為您守護您的健康</p>
+              <a href="#">Find out more &raquo;</a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="far fa-hospital"></i>
+              <span data-purecounter-start="0" data-purecounter-end="26" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>醫療中心</strong> 針對各項醫療更深入的醫學中心</p>
+              <a href="#">Find out more &raquo;</a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="fas fa-flask"></i>
+              <span data-purecounter-start="0" data-purecounter-end="14" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>研究實驗室</strong>最先進的研究團隊，突破醫學瓶頸</p>
+              <a href="#">Find out more &raquo;</a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="fas fa-award"></i>
+              <span data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>獲獎紀錄</strong> 在各項競賽及研究項目中表現卓越</p>
+              <a href="#">Find out more &raquo;</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Counts Section -->
+
+    <!-- ======= Features Section ======= -->
+    <!-- <section id="features" class="features">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right">
+            <div class="icon-box mt-5 mt-lg-0">
+              <i class="bx bx-receipt"></i>
+              <h4>Est labore ad</h4>
+              <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+            </div>
+            <div class="icon-box mt-5">
+              <i class="bx bx-cube-alt"></i>
+              <h4>Harum esse qui</h4>
+              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+            </div>
+            <div class="icon-box mt-5">
+              <i class="bx bx-images"></i>
+              <h4>Aut occaecati</h4>
+              <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+            </div>
+            <div class="icon-box mt-5">
+              <i class="bx bx-shield"></i>
+              <h4>Beatae veritatis</h4>
+              <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
+            </div>
+          </div>
+          <div class="image col-lg-6 order-1 order-lg-2" style='background-image: url("assets/img/features.jpg");' data-aos="zoom-in"></div>
+        </div>
+
+      </div>
+    </section> --><!-- End Features Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>特色醫療中心</h2>
+          <p>專業的醫療人員提供最佳的醫療服務</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon"><i class="fas fa-heartbeat"></i></div>
+            <h4 class="title">心臟衰竭中心</h4>
+            <p class="description">我們的心臟衰竭中心提供診斷、治療和長期管理心臟衰竭的各種服務。我們使用最先進的診斷技術，如心臟超聲波、心導管檢查和心臟磁共振等，以評估患者的心臟功能和病情。我們提供全面的藥物治療、心臟手術和介入治療，如心臟導管插入和心臟起搏器植入等，以確保最佳的治療效果。</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon"><i class="fas fa-pills"></i></div>
+            <h4 class="title">臨床毒物中心</h4>
+            <p class="description">我們的臨床毒物中心提供全天候的急診服務，隨時應對各種急性中毒事件。我們採用最先進的設備和技術，進行中毒症狀評估、急救處置和監測。我們的目標是迅速識別中毒的原因、評估患者的狀態，並採取適當的治療措施。</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon"><i class="fas fa-hospital-user"></i></div>
+            <h4 class="title">健康管理中心</h4>
+            <p class="description">我們的健康管理中心提供個性化的健康評估和計劃，根據患者的需求和目標，制定適合他們的健康管理方案。這包括定期體檢、疾病篩查、營養諮詢、運動指導、心理支持等。</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon"><i class="fas fa-dna"></i></div>
+            <h4 class="title">早期療育中心</h4>
+            <p class="description">我們的早期療育中心提供多種專業治療和干預，包括言語治療、職能治療、行為治療、社交技能訓練等。這些治療方法旨在幫助兒童克服語言障礙、發展遲緩、學習困難和社交困難等問題，提升他們的發展和適應能力。</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon"><i class="fas fa-wheelchair"></i></div>
+            <h4 class="title">血友病及血栓防治中心</h4>
+            <p class="description">在血友病方面，我們的專業團隊包括血液學家、內科醫生、血友病專家和護理人員等。我們提供診斷、治療和長期護理，以滿足血友病患者的各種需求。我們致力於提供個性化的治療方案，包括血友病因子替代療法、出血管理、關節保護和疼痛控制等。</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon"><i class="fas fa-notes-medical"></i></div>
+            <h4 class="title">達文西微創手術中心</h4>
+            <p class="description">我們的達文西微創手術中心涵蓋了各個醫學領域，包括心臟血管、神經外科、婦產科、泌尿系統、消化系統等。無論是進行冠狀動脈搭橋手術、關節置換手術、腹腔鏡手術還是其他微創手術，我們的醫生都具有豐富的經驗和專業知識，能夠為患者提供最佳的治療方案。</p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    
+
+    <!-- ======= Departments Section ======= -->
+    <section id="departments" class="departments">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>門診介紹</h2>
+          <p>歡迎光臨中興醫院門診部！我們提供多個專科門診，包括內科、外科、婦產科、小兒科等，以滿足患者的不同需求。我們的門診部設施先進，配備了現代化的醫療設備和診斷工具，以確保準確的診斷和治療。我們的醫生和護理團隊具有豐富的臨床經驗和專業知識，將為每位患者提供個性化的醫療護理和全方位的支持。我們堅持以患者為中心，致力於提供高品質的醫療服務，以幫助患者恢復健康和提高生活質量。</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <ul class="nav nav-tabs flex-column">
+              <li class="nav-item">
+                <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
+                  <h4>心臟科</h4>
+                  <p>我們提供心臟檢查、冠狀動脈血管成形術、心臟手術等專科治療</p>
+                </a>
+              </li>
+              <li class="nav-item mt-2">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
+                  <h4>神經內科</h4>
+                  <p>我們提供手術和非手術的治療選項，包括腦腫瘤手術、脊椎手術、神經損傷修復等</p>
+                </a>
+              </li>
+              <li class="nav-item mt-2">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
+                  <h4>肝膽科</h4>
+                  <p>我們提供肝功能評估、肝炎治療、膽道結石切除等專科治療</p>
+                </a>
+              </li>
+              <li class="nav-item mt-2">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
+                  <h4>小兒科</h4>
+                  <p>我們提供常規檢查、疫苗接種、診斷和治療各種兒童疾病</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-8">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="tab-1">
+                <h3>心臟科</h3>
+                <!-- <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p> -->
+                <img src="assets/img/departments-1.jpg" alt="" class="img-fluid">
+                <p>中興醫院的心臟科提供專業的心臟疾病診斷和治療服務。我們的專家團隊擁有豐富的臨床經驗和專業知識，致力於保護和維護心臟健康。我們提供心臟檢查、冠狀動脈血管成形術、心臟手術等專科治療。我們的設施配備先進的醫療技術，以確保準確的診斷和最佳的治療效果。我們關注患者的心臟健康，提供個性化的護理計劃和全方位的支持，以提高生活質量和促進康復。</p>
+              </div>
+              <div class="tab-pane" id="tab-2">
+                <h3>神經外科</h3>
+                <!-- <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p> -->
+                <img src="assets/img/departments-2.jpg" alt="" class="img-fluid">
+                <p>中興醫院的神經外科提供專業的神經系統疾病診斷和治療服務。我們的專家團隊擁有豐富的專業知識和技術，致力於治療腦部和神經系統相關的疾病和病症。我們提供手術和非手術的治療選項，包括腦腫瘤手術、脊椎手術、神經損傷修復等。我們的設施配備先進的醫療技術，以確保精確的診斷和最佳的治療效果。我們致力於提供安全、關懷和專業的神經外科護理，以改善患者的生活質量和恢復健康。</p>
+              </div>
+              <div class="tab-pane" id="tab-3">
+                <h3>肝膽科</h3>
+                <!-- <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p> -->
+                <img src="assets/img/departments-3.jpg" alt="" class="img-fluid">
+                <p>中興醫院的肝膽科提供專業的診斷、治療和護理，專注於肝臟和膽道相關疾病。我們的專家團隊具有豐富的經驗和知識，致力於提供高品質的醫療服務。我們提供肝功能評估、肝炎治療、膽道結石切除等專科治療。我們的設施先進，設備齊全，確保準確的診斷和有效的治療。我們關注患者的健康和福祉，致力於改善他們的生活質量。</p>
+              </div>
+              <div class="tab-pane" id="tab-4">
+                <h3>小兒科</h3>
+                <!-- <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p> -->
+                <img src="assets/img/departments-4.jpg" alt="" class="img-fluid">
+                <p>中興醫院的小兒科提供專業、全面的醫療護理給兒童和青少年患者。我們的專家團隊擁有豐富的經驗和專業知識，致力於保護和促進兒童的健康成長。我們提供常規檢查、疫苗接種、診斷和治療各種兒童疾病。我們的環境兒童友好，致力於提供溫馨和關懷的就醫體驗。我們與家長緊密合作，共同關注兒童的身心健康，以確保他們的幸福和福祉。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Departments Section -->
+
+   
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section> --><!-- End Testimonials Section -->
+
+    <!-- ======= Doctors Section ======= -->
+    <section id="doctors" class="doctors section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>醫師群介紹</h2>
+          <p>中興醫院擁有一支優秀的醫師群，他們擁有豐富的臨床經驗和專業知識，致力於為患者提供高品質的醫療護理。我們的醫師團隊涵蓋各個專科領域，包括內科、外科、婦產科、小兒科等，能夠提供全面的診斷、治療和手術服務。他們以患者為中心，與患者密切合作，致力於提供個性化的醫療方案，以確保患者的健康和康復。</p>
+        </div>
+
+        <div class="row">
+          {% for doctor in doctors %}
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <div class="member-img">
+                <img src="{{ doctor.photo }}" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <h4>{{ doctor.name }}</h4>
+                <span>{{ doctor.bio }}</span>
+                <span>{{ doctor.department }}</span>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          
+
+        </div>
+
+      </div>
+    </section><!-- End Doctors Section -->
+
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="gallery">
+      <div class="container" data-aos="fade-up">
+        
+        <div class="section-title">
+          <h2>照片花絮</h2>
+          
+        </div>
+      <div class="row" data-aos-delay="100">
+        
+        <div class="gallery-slider swiper">
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-1.jpg"><img src="assets/img/gallery/gallery-1.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-2.jpg"><img src="assets/img/gallery/gallery-2.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-3.jpg"><img src="assets/img/gallery/gallery-3.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-4.jpg"><img src="assets/img/gallery/gallery-4.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-5.jpg"><img src="assets/img/gallery/gallery-5.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-6.jpg"><img src="assets/img/gallery/gallery-6.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-7.jpg"><img src="assets/img/gallery/gallery-7.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-8.jpg"><img src="assets/img/gallery/gallery-8.jpg" class="img-fluid" alt=""></a></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+       </div>
+      
+      </div>
+     </section>
+    <!-- End Gallery Section -->
+
+
+<script>
+var my_btn = document.getElementById("btn");
+my_btn.addEventListener("click", function(){
+  alert("123");
+});
+</script>
+
+  </main><!-- End #main -->
+</body>
+
+{% endblock %}
